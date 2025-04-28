@@ -1,0 +1,313 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root{
+    --main-color: #6100fc;
+    --dark-color: #222222;
+    --parg-color: #666666;
+    --dark-red: #d01418;
+    --border-color: #6666662a;
+    --name-item: #0066c0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--dark-color);
+}
+
+p{
+    color: var(--parg-color);
+}
+.container{
+    width: 75%;
+    margin: auto;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+    
+}
+
+header .top-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header .top-nav .logo img{
+    width: 150px;
+}
+
+header .top-nav .cart_header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+header .top-nav .cart_header .icon{
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+    width: 15px;
+    height: 25px;
+    padding : 6px 2px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+header .top-nav .cart_header .icon:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+header .top-nav .cart_header .icon_cart{
+    position: relative;
+    padding : 4px;
+    
+}
+header .top-nav .cart_header .count_item{
+    position: absolute;
+    background: var(--main-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 13px;
+    top: -5px;
+    right: 0px;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+}
+header .top-nav .cart_header .tottal_price p{
+    margin-bottom: 8px;
+}
+
+header nav{
+    border-top: 1px solid var(--border-color);
+}
+header .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .links ul{
+    display: flex;
+    gap: 70px;
+}
+header .links ul li a{
+    color: var(--dark-color);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+header .links ul li{
+    position: relative;
+    padding: 20px 0;
+}
+header .links ul li::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--main-color);
+    transition: 0.3s ease-in-out;
+}
+header .links ul li.active::after,
+header .links ul li:hover::after{
+    width: 100%;
+}
+
+header .links .loging_signup a{
+    color: var(--dark-color);
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+/* responsive design */
+
+/* Resopnsive */
+header .links ul .bg-overlay,
+header .links .btn_open_menu,
+header .links ul .logo_menu,
+header .links ul .btn_close_menu{
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .slider .container .side_bar{
+        display: none;
+    }
+    .slider .container .slide-swp{
+        width: 100%;
+    }
+    .features .container .feature_item{
+        margin-bottom: 10px;
+    }
+    .newsletter .container{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .newsletter .container .text{
+        width: 100%;
+    }
+    .newsletter .newsletter_form{
+        width: 70%;
+    }
+    footer .container{
+        flex-wrap: wrap;
+    }
+    footer .container .row{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+    footer .container .big_row{
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 900px){
+    header .top-nav{
+        flex-wrap: wrap;
+    }
+    header .links{
+        padding: 20px 0;
+    }
+    header .links ul{
+        padding-top: 50px;
+        position: fixed;
+        top: 0;
+        left: -420px;
+        bottom: 0;
+        background: #ffff;
+        flex-direction: column;
+        gap: 20px;
+        width: 400px;
+        border-right: 1px solid var(--border-color);
+        text-align: center;
+        transition: 0.3s ease-in-out;
+    }
+    header .links ul.active{
+        left: 0;
+    }
+    header .links ul .logo_menu{
+        width: 140px;
+        margin: 0px auto;
+        display: block;
+    }
+    header .links ul .btn_close_menu{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        color: var(--main-color);
+        display: block;
+    }
+    header .links .btn_open_menu{
+        display: block;
+        font-size: 25px;
+    }
+    header .links ul .bg-overlay{
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        background: #0000003d;
+        width: calc(100vw - 400px);
+        transition: 0.3s ease-in-out;
+    }
+    header .links ul.active .bg-overlay{
+        right: 0;
+    }
+    .banner{
+        margin: 0;
+    }
+    .slide{
+        margin-bottom: 50px;
+    }
+    .slide_product .categ_img{
+        display: none;
+    }
+    .slide_product .product_swip{
+        width: 100%;
+    }
+    .newsletter .text h4{
+        font-size: 25px;
+    }
+    .newsletter .text p{
+        font-size: 14px;
+    }
+    .newsletter .text h6{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px){
+    header .links ul{
+        width: 100%;
+        left: -100%;
+    }
+    .cart{
+        width: 100%;
+        right: -100%;
+    }
+    .product .name_product a{
+        font-size: 13px;
+    }
+    .product{
+        padding: 15px 10px;
+    }
+    .stars .icon{
+        font-size: 14px;
+    }
+    .slide{
+        margin-bottom: 30px;
+    }
+    .top_slide h2{
+        font-size: 16px;
+    }
+    .newsletter .newsletter_form{
+        width: 100%;
+    }
+    .newsletter .text h4{
+        font-size: 23px;
+    }
+    .newsletter .text p{
+        font-size: 13px;
+    }
+    .newsletter .text h6{
+        font-size: 16px;
+    }
+    .newsletter .newsletter_form button{
+        width: 120px;
+        font-size: 14px;
+    }
+    .newsletter .newsletter_form input{
+        padding: 16px 140px 16px 20px;
+    }
+    footer .container .row{
+        width: 100%;
+    }
+    footer .container .big_row{
+        width: 100%;
+    }
+}

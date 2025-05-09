@@ -9,13 +9,14 @@
     font-family: 'Rubik', sans-serif;
 }
 
+
 :root{
     --main-color: #6100fc;
     --dark-color: #222222;
     --parg-color: #666666;
     --dark-red: #d01418;
     --border-color: #6666662a;
-    --name-item: #0066c0;
+    --name-item:#4299e1;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -31,13 +32,12 @@ p{
 }
 
 header{
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     right: 0;
     background: #fff;
     z-index: 1000;
-    
 }
 
 header .top-nav{

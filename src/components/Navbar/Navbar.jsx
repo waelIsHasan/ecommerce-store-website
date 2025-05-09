@@ -4,9 +4,11 @@ import "./Navbar.css";
 import CustomSearch from "../SearchField/CustomSearch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart ,faList} from "@fortawesome/free-solid-svg-icons";
+import { Outlet } from 'react-router-dom';
 
 export default function Navbar() {
   return (
+    <div>
     <header>
       <div className="container top-nav">
         <Link to="" className="logo">
@@ -53,6 +55,9 @@ export default function Navbar() {
         </div>
       </nav>
     </header>
+    <Outlet/>
+    </div>
+
   );
 }
 

@@ -1,0 +1,64 @@
+.product-list{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.product-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pagination container */
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* All buttons within pagination */
+.pagination-buttons button {
+  padding: 0.5rem 1.25rem;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effect */
+.pagination-buttons button:hover {
+  background-color: var( --main-color-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Button active effect */
+.pagination-buttons button:active {
+  transform: translateY(0);
+}
+
+/* Disabled button style */
+.pagination-buttons button:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Page info text */
+.pagination-buttons span {
+  font-size: 1.1rem;
+  color: #444;
+  min-width: 80px;
+  text-align: center;
+  font-weight: 600;
+}

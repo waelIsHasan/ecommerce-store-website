@@ -1,11 +1,10 @@
-import img1 from '../../assets/slide2.png';
+
 import './Slide.css'
-export default function Slide(){
+export default function Slide({img = "../../assets/slide2.png"}){
     return (
         <div className='slide'>
-            <img src={img1} alt="" />
+            <img src={img} alt="" />
         </div>
-
     )
 
 }

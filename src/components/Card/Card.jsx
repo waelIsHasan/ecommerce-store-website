@@ -1,10 +1,11 @@
 import React from 'react';
 import './Card.css'; 
+const API_BASE_URL = 'http://localhost:1337'; // Replace with your API base URL
 
 //http://localhost:1337/api/products?filters[category][id]=4&populate=*
 const Card = ({ product }) => {
-  const { name, price, originalPrice, imageUrl, rating, reviews, isNew, discount } = product;
-
+  const { name, price, originalPrice, image, rating, reviews, isNew, discount } = product;
+  const imageUrl = `${API_BASE_URL}${image?.url}`;  
   return (
     <div className="product-card">
       <div className="product-image-container">

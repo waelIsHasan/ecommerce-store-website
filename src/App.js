@@ -3,6 +3,8 @@ import SignUp from "./pages/Auth/sign-up.jsx";
 import SignIn from "./pages/Auth/sign-in.jsx";
 import AuthLayout from "./pages/Auth/AuthLayout.jsx";
 import Home from "./pages/Home/Home.jsx";
+
+
 const App = () => {
   return (
     <Router>

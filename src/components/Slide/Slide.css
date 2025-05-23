@@ -1,9 +1,15 @@
 .slide{
-    width : 100%;
-    height: 100vh;
+    height: 90vh;
+    width: 100%;
+    margin : 5px auto 70px;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow:4px 10px 20px #6100fcc2; 
 
 }
 .slide img{
+    object-fit: cover;
     width : 100%;
     height: 100%;
+    position: relative;
 }

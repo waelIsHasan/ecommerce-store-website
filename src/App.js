@@ -3,6 +3,7 @@ import SignUp from "./pages/Auth/sign-up.jsx";
 import SignIn from "./pages/Auth/sign-in.jsx";
 import AuthLayout from "./pages/Auth/AuthLayout.jsx";
 import Home from "./pages/Home/Home.jsx";
+import AllProduct from "./pages/ALLProduct/AllProduct.jsx";
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
         <Routes>
           {/* public routes */}
           <Route  path="/" element={<Home/>}/>
+          <Route  path="/all-product" element={<AllProduct/>}/>
 
           <Route element={<AuthLayout />}>
             <Route path="auth/signup" element={<SignUp />} />

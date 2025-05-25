@@ -5,16 +5,15 @@ import slideImage from '../../assets/slides/4.png';
 import ProductList from "../../components/ProductList/ProductList.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import { GroupBanner } from "../../components/Banner/Banner.jsx";
+import AllProduct from "../ALLProduct/AllProduct.jsx";
 
 export default function Home() {
   return (
     <div className="home">
       <Navbar />
       <Slide img={slideImage}/>
-      
       <ProductList />
       <GroupBanner />
-
       <Footer/>
     </div>
   );

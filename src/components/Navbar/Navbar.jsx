@@ -25,12 +25,12 @@ export default function Navbar() {
             <img className="logo_menu" src="img/logo-black.png" alt="" />
 
             <li className="active">
-              <Link to="" href="index.html">
+              <Link to="/" >
                 home
               </Link>
             </li>
             <li>
-              <Link to="">all products</Link>
+              <Link to="/all-product">all products</Link>
             </li>
             <li>
               <Link to="" href="">

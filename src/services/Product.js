@@ -42,3 +42,25 @@ export const createProduct = async (productData) => {
   }
   return response.json();
 };
+
+
+export const fetchProductsByCategoriesInPage = async (categories, page=1) => {
+  //http://localhost:1337/api/products?Clothes
+  try {
+    if (!categories) {
+      // No filter: return all products
+      const response = await fetch(`${API_BASE_URL}/products?pagination[page]=${page}&pagination[pageSize]=8&populate=image`);
+      return await response.json();
+    }
+// Construct filter query
+    const query = categories
+      .map((cat) => `filters[category][name][$eq]=${cat}`)
+      .join('&');
+
+    const response =  await fetch(`${API_BASE_URL}/products?populate=*&${query}&pagination[page]=${page}&pagination[pageSize]=8`);
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return [];
+  }
+};

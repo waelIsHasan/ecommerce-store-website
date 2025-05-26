@@ -2,13 +2,12 @@
 import Skeleton from '@mui/material/Skeleton';
 
 import { useState } from "react";
-import { useProductsInPage } from "../../hooks/useProducts";
+import {useProductsInPage , useProductsByCategoryInPage} from '../../hooks/useProducts.js';
 import Card from "../Card/Card";
 import "./ProductList.css";
-function ProductList() {
+function ProductList({categories}) {
   const [page, setPage] = useState(1);
-
-  const { data: products ,meta ,isLoading, isError, error } = useProductsInPage(page);
+  const { data: products ,isLoading, isError, error } = useProductsByCategoryInPage(categories, page);
 
   if (isLoading) {
       return (
@@ -34,7 +33,6 @@ function ProductList() {
     <div className="product-page">
       <h2>Products</h2>
       <div className="product-list">
-        <h1>{console.log(meta)}</h1>
         {
           <ul className="product-list">
             {products &&
@@ -56,7 +54,6 @@ function ProductList() {
         <span>Page: {page}</span>
         <button
           onClick={() => setPage((prev) => prev + 1)}
-          // Assume API returns `hasNextPage`
         >
           Next
         </button>

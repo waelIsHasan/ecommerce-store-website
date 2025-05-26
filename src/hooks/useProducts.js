@@ -4,7 +4,8 @@ import {
   fetchProducts,
   fetchProductById,
   createProduct,
-  fetchProductsInPage
+  fetchProductsInPage,
+  fetchProductsByCategoriesInPage
 } from "../services/Product";
 
 export const useProducts = () => {
@@ -22,6 +23,17 @@ export const useProductsInPage = (page)=>{
        
     }
   )
+}
+
+export const useProductsByCategoryInPage = (categories , page)=>{
+  return useQuery(
+    {
+      queryKey : ["products" , page , categories],
+      queryFn : ()=>fetchProductsByCategoriesInPage(categories , page),
+      keepPreviousData : true,
+    }
+  )
+
 }
 
 export const useProduct = (productId) => {

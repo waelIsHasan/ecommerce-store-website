@@ -19,6 +19,17 @@
   position: relative;
 }
 
+.product-card-small{
+  width: 140px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  margin: 5px;
+  position: relative;
+}
+
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -27,6 +38,11 @@
 .product-image-container {
   position: relative;
   height: 220px;
+  overflow: hidden;
+}
+.product-image-container-small {
+  position: relative;
+  height: 100px;
   overflow: hidden;
 }
 

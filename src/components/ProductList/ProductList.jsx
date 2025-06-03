@@ -7,7 +7,7 @@ import Card from "../Card/Card";
 import "./ProductList.css";
 function ProductList({categories}) {
   const [page, setPage] = useState(1);
-  const { data: products ,isLoading, isError, error } = useProductsByCategoryInPage(categories, page);
+  const { data: products ,isLoading, isError, error } = useProductsByCategoryInPage(categories,page);
 
   if (isLoading) {
       return (
@@ -15,7 +15,7 @@ function ProductList({categories}) {
       <h2>Products</h2>
 
       <div className='product-list'>
-        {[...Array(10)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
              <div  style={{ margin : "10px" ,height : "400px" , width : "300px"}}>
                 <Skeleton sx={{ bgcolor: 'grey.600', height: '100%',width : '100%'}} />
              </div>
@@ -36,7 +36,7 @@ function ProductList({categories}) {
         {
           <ul className="product-list">
             {products &&
-              products["data"].map((product) => (
+              products["data"]?.map((product) => (
                 <li key={product.id} className="product-item">
                   <Card product={product} />
                 </li>

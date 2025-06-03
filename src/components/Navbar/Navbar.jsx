@@ -5,7 +5,7 @@ import CustomSearch from "../SearchField/CustomSearch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart ,faList} from "@fortawesome/free-solid-svg-icons";
 import { Outlet } from 'react-router-dom';
-
+import { useCart } from "../../contexts/useCartContext";
 export default function Navbar() {
   return (
     <div>
@@ -48,7 +48,7 @@ export default function Navbar() {
             <Link to="/auth/signup">
               login <i className="fa-solid fa-right-to-bracket"></i>
             </Link>
-            <Link to="/auth/signup">
+            <Link to="/auth/signin">
               sign up <i className="fa-solid fa-user-plus"></i>
             </Link>
           </div>
@@ -61,20 +61,25 @@ export default function Navbar() {
   );
 }
 
+
 function HeaderCart() {
+  const { cart } = useCart();
+
   return (
     <div className="cart_header">
       <div className="icon_cart">
+          <Link to="/cart">
+
         <FontAwesomeIcon
           style={{ width: "50px" }}
           className="icon"
           icon={faShoppingCart}
-        />
-        <span className="count_item">0</span>
+        /> </Link>
+        <span className="count_item">{cart.count}</span>
       </div>
       <div className="tottal_price">
         <p>My Cart:</p>
-        <p className="price_cart_Head">$0</p>
+        <p className="price_cart_Head">${cart.total.toFixed(2)}</p>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 // Create a new AuthLayout.jsx
-import './auth.css'
+// import './auth.css'
 import { Outlet } from 'react-router-dom';
 
 const AuthLayout = ({ children }) => {

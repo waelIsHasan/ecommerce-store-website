@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Category.css';
 import ProductList from '../ProductList/ProductList';
-// import { fetchProductsByCategories } from '../../services/Product';
 const CategoryFilter = ({ categories }) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const toggleCategory = (category) => {
@@ -13,7 +12,7 @@ const CategoryFilter = ({ categories }) => {
   };
 
   return (
-    <div>
+    <div className='filter-products'>
 
     <div className="category-filter">
       <h3>Filter by Category</h3>

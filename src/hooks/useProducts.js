@@ -5,7 +5,8 @@ import {
   fetchProductById,
   createProduct,
   fetchProductsInPage,
-  fetchProductsByCategoriesInPage
+  fetchProductsByCategoriesInPage,
+  searchForProductsByTest
 } from "../services/Product";
 
 export const useProducts = () => {
@@ -25,14 +26,22 @@ export const useProductsInPage = (page)=>{
   )
 }
 
-export const useProductsByCategoryInPage = (categories , page)=>{
+export const useProductsByCategoryInPage = (categories,page)=>{
   return useQuery(
     {
-      queryKey : ["products" , page , categories],
+      queryKey : ["products" , page,categories],
       queryFn : ()=>fetchProductsByCategoriesInPage(categories , page),
       keepPreviousData : true,
     }
   )
+
+}
+export const useSearchField = (debouncedInput)=>{
+  return useQuery({
+    queryKey: ['search-suggestions', debouncedInput],
+    queryFn: () => searchForProductsByTest(debouncedInput),
+    enabled: !!debouncedInput,
+  });
 
 }
 

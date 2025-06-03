@@ -13,6 +13,44 @@
     width: 100%;
 }
 
+.search-container {
+  position: relative;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  width: 100%;
+  left : 0;
+  margin : auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.search-results {
+  padding: 20px;
+}
+
+.result-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
 .search button{
     position: absolute;
     top: 0;
